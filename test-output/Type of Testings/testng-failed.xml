@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="classes" name="Failed suite [Type of Testings]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="extentlisteners.ExtentListeners"/>
+  </listeners>
+  <test thread-count="2" parallel="classes" name="Test(failed)">
+    <parameter name="Browser" value="Chrome"/>
+    <classes>
+      <class name="Test.TestCasesController2">
+        <methods>
+          <include name="CheGuevara_Search"/>
+          <include name="closeBrowser"/>
+          <include name="ExecutionTimeForTest"/>
+          <include name="launchUrl"/>
+        </methods>
+      </class> <!-- Test.TestCasesController2 -->
+      <class name="Test.TestCasesController">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="ExecutionTimeForTest"/>
+          <include name="SearchForYugandharRoyal"/>
+          <include name="launchUrl"/>
+        </methods>
+      </class> <!-- Test.TestCasesController -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Type of Testings] -->

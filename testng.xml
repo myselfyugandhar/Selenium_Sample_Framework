@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Type of Testings" parallel="classes" thread-count="2" >
+<listeners>
+
+		<listener class-name="extentlisteners.ExtentListeners" />
+
+	</listeners>
+<test thread-count="2" name="Test">
+		<parameter name="Browser" value="Chrome" />
+		
+		<classes>
+			<class name="Test.TestCasesController" />
+			<class name="Test.TestCasesController2" />
+		</classes>
+
+	</test> <!-- Test -->
+</suite>
