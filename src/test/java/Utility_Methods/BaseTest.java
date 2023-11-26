@@ -14,6 +14,7 @@ import Utility_Methods.InitialSetup;
 import Utility_Methods.ListOfInstancesDataProviderClass;
 import Utility_Methods.Utilitymethods;
 import Utility_Methods.WordDocument;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -117,16 +118,9 @@ public class BaseTest {
         //Setting up Path for Test Results Screenshots
         this.TestResultsScreenshotsPath = System.getProperty("user.dir")+"/Test Results/Test Results_ "+execution_start_time+"/Screenshots/";
         File file3 = new File(TestResultsScreenshotsPath);
-        if (!file3.exists()) {
-		ChromeOptions options = new ChromeOptions();
-options.addArguments("start-maximized"); // open Browser in maximized mode
-options.addArguments("disable-infobars"); // disabling infobars
-options.addArguments("--disable-extensions"); // disabling extensions
-options.addArguments("--disable-gpu"); // applicable to windows os only
-options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-options.addArguments("--no-sandbox"); // Bypass OS security model
-WebDriver driver = new ChromeDriver(options);
-		//WebDriver driver = new ChromeDriver();
+        if (!file3.exists()) {WebDriverManager.chromedriver().setup();
+       // driver = new ChromeDriver();
+	WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.geeksforgeeks.org/");
         Thread.sleep(5000);
