@@ -77,9 +77,9 @@ public class BaseTest {
 		
 	}
 	
-	@Parameters("Browser")
+	//@Parameters("Browser")
 	@BeforeClass
-		public void launchUrl(String Browser ) throws InterruptedException, IOException {
+		public void launchUrl( ) throws InterruptedException, IOException {String Browser="Chrome";
 		 inputStream = new FileInputStream(System.getProperty("user.dir")+"\\Resources\\InputData\\InputSheet.xlsx");
 		workbook = new XSSFWorkbook(inputStream);
 		 SheetName= workbook.getSheet("SearchYugandharRoyal");
@@ -160,10 +160,10 @@ public class BaseTest {
 		}
 	
 
-	@Parameters("Browser")	
+	
 	@AfterClass(alwaysRun = true)
 
-	public void closeBrowser(String Browser) {			
+	public void closeBrowser() {	String Browser="Chrome";		
 		try {			
 			objSetup.tearDown(outputCsvFileName,driver, CSVWriterNew, ApplicationName, Region, Env, ReleaseMonth, DashboardName,Browser,execution_start_time,ReportPath);
 
