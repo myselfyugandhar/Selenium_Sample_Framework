@@ -28,8 +28,8 @@ public class GoogleSearch {
 		public void GoogleSearch(XSSFSheet sheet,String execution_start_Time,String TestResultsDocPath,String TestResultsScreenshotsPath) throws Exception
 		{
 				
-		driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input")).click();
-		driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input")).sendKeys(sheet.getRow(1).getCell(0).getStringCellValue());
+		driver.findElement(By.xpath("//*[@type='search']")).click();
+		driver.findElement(By.xpath("//*[@type='search']")).sendKeys(sheet.getRow(1).getCell(0).getStringCellValue());
 		Thread.sleep(3000);
 		Utilitymethods obj = new Utilitymethods();
 		obj.captureScreenshot("Yugandhar_Royal_SearchResult",driver,execution_start_Time,TestResultsScreenshotsPath);
@@ -44,6 +44,7 @@ public class GoogleSearch {
 			Thread.sleep(1000);
 		System.out.println("Successfully searched for Yugandhar Royal");
 		CSVWriterNew.writeCsvList( "Search for Yugandhar Royal", "Searching for Yugandhar Royal", "Searching for Yugandhar Royal", "Results should found for Yugandhar Royal", "Results found for Yugandhar Royal", "Pass");
+		Thread.sleep(5000);
 		Assert.fail();
 		System.out.println("Failed to search for Yugandhar Royal");
 			CSVWriterNew.writeCsvList( "Search for Yugandhar Royal", "Searching for Yugandhar Royal", "Searching for Yugandhar Royal", "Results should found for Yugandhar Royal", "No Results found for Yugandhar Royal", "Fail");

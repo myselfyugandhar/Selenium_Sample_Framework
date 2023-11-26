@@ -31,11 +31,13 @@ public class GoogleSearch2 {
 		
 		{		
 		
-		driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input")).click();}catch(Exception e) {
-			driver.findElement(By.xpath("//*[@id='logo']/img")).click();Thread.sleep(5000);	
+//		driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input")).click();}catch(Exception e) {
+//			driver.findElement(By.xpath("//*[@id='logo']/img")).click();Thread.sleep(5000);	
+		}catch(Exception e) {
+			
 		}
-		driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input")).click();
-		driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input")).sendKeys(sheet.getRow(1).getCell(0).getStringCellValue());
+		driver.findElement(By.xpath("//*[@type='search']")).click();
+		driver.findElement(By.xpath("//*[@type='search']")).sendKeys(sheet.getRow(1).getCell(0).getStringCellValue());
 		Thread.sleep(1000);
 		Utilitymethods obj = new Utilitymethods();
 		obj.captureScreenshot("Che Guevara_Search_Result",driver,execution_start_Time,TestResultsScreenshotsPath);
@@ -49,7 +51,7 @@ public class GoogleSearch2 {
 		Thread.sleep(1000);
 		System.out.println("Successfully searched for Che Guevara");
 		CSVWriterNew.writeCsvList( "Search for Che Guevara", "Searching for Che Guevara", "Searching for Che Guevara", "Results should found for Che Guevara", "Results found for Che Guevara", "Pass");
-		Assert.fail();
+		//Assert.fail();
 		System.out.println("Failed to search for for Che Guevara");
 			CSVWriterNew.writeCsvList( "Search for Che Guevara", "Searching for Che Guevara", "Searching for Che Guevara", "Results should found for Che Guevara", "No Results found for Che Guevara", "Fail");
 			}

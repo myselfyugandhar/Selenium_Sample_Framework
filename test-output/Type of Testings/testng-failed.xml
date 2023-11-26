@@ -9,20 +9,12 @@
     <classes>
       <class name="Test.TestCasesController2">
         <methods>
-          <include name="CheGuevara_Search"/>
+          <include name="CheGuevara_Search" invocation-numbers="0"/>
           <include name="closeBrowser"/>
           <include name="ExecutionTimeForTest"/>
           <include name="launchUrl"/>
         </methods>
       </class> <!-- Test.TestCasesController2 -->
-      <class name="Test.TestCasesController">
-        <methods>
-          <include name="closeBrowser"/>
-          <include name="ExecutionTimeForTest"/>
-          <include name="SearchForYugandharRoyal"/>
-          <include name="launchUrl"/>
-        </methods>
-      </class> <!-- Test.TestCasesController -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Type of Testings] -->

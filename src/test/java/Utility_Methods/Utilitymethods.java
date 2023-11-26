@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Date;
 
 import javax.imageio.ImageIO;
@@ -37,13 +38,13 @@ import com.assertthat.selenium_shutterbug.core.Capture;
 import com.assertthat.selenium_shutterbug.core.Shutterbug;
 public class Utilitymethods {
 	public static WebElement ElementClickability(WebDriver driver,String xpath,int sec) {
-		WebDriverWait wait = new WebDriverWait(driver,sec);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(sec));
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(xpath))));
 			return element;
 			
 	}
 	public static WebElement ElementVisibility(WebDriver driver,String xpath,int sec) {
-		WebDriverWait wait = new WebDriverWait(driver,sec);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(sec));
 		WebElement e = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
         e = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
 		return e;	
@@ -87,14 +88,14 @@ public class Utilitymethods {
 		
 	}
 	public static WebElement ElementNotVisibility(WebDriver driver,String xpath,int sec) {
-		WebDriverWait wait = new WebDriverWait(driver,sec);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(sec));
 		WebElement e = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
         e = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
 		return e;	
 	}
 	
 	public static WebElement ElementPresence(WebDriver driver,String xpath,int sec) {
-		WebDriverWait wait = new WebDriverWait(driver,sec);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(sec));
 		WebElement e = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
 		e = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
 		return e;	

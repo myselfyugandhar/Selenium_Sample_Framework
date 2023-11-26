@@ -68,7 +68,7 @@ public class WordDocument {
 		CTText ctFooter=ctrFooter.addNewT();
 		
 		//Setting Footer
-		String footerText="© 2021. Confidential - Do not Share this document";
+		String footerText="2021. Confidential - Do not Share this document";
 		ctFooter.setStringValue(footerText);	
 		
 		// Alignments and color, styles of the header in the word doc -- Footer
@@ -163,7 +163,7 @@ public class WordDocument {
 		CTText ctFooter=ctrFooter.addNewT();
 		
 		//Setting Footer
-		String footerText="© 2021. Confidential - Do not Share this document";
+		String footerText="2021. Confidential - Do not Share this document";
 		ctFooter.setStringValue(footerText);	
 		
 		// Alignments and color, styles of the header in the word doc -- Footer

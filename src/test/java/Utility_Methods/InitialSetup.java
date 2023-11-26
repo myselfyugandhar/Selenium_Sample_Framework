@@ -54,11 +54,11 @@ public class InitialSetup{
 			try {
 				if (Browser.equals("Chrome")) {
 					if (prop.getProperty("PLATFORM").contains("win")) {
-						System.setProperty("webdriver.chrome.driver",
-								System.getProperty("user.dir") + "/Resources/Drivers/chromedriver.exe");
+//						System.setProperty("webdriver.chrome.driver",
+//								System.getProperty("user.dir") + "/Resources/Drivers/chromedriver.exe");
 					} else if (prop.getProperty("PLATFORM").contains("LINUX")) {
-						System.setProperty("webdriver.chrome.driver",
-								System.getProperty("user.dir") + "/Resources/Drivers/LINUX/chromedriver");
+//						System.setProperty("webdriver.chrome.driver",
+//								System.getProperty("user.dir") + "/Resources/Drivers/LINUX/chromedriver");
 					}
 							driver.set(new ChromeDriver());
 					driver.get().get(URL);
