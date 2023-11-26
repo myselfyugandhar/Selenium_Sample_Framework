@@ -80,7 +80,7 @@ public class BaseTest {
 	//@Parameters("Browser")
 	@BeforeClass
 		public void launchUrl( ) throws InterruptedException, IOException {String Browser="Chrome";
-		 inputStream = new FileInputStream(System.getProperty("user.dir")+"\\Resources\\InputData\\InputSheet.xlsx");
+		 inputStream = new FileInputStream(System.getProperty("user.dir")+"/Resources/InputData/InputSheet.xlsx");
 		workbook = new XSSFWorkbook(inputStream);
 		 SheetName= workbook.getSheet("SearchYugandharRoyal");
 		SheetName2= workbook.getSheet("SearchCheGuevara");
