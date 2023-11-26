@@ -1,8 +1,10 @@
 package Utility_Methods;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -80,7 +82,7 @@ public class BaseTest {
 	//@Parameters("Browser")
 	@BeforeClass
 		public void launchUrl( ) throws InterruptedException, IOException {String Browser="Chrome";
-		 inputStream = new FileInputStream(System.getProperty("user.dir")+"/Resources/InputData/InputSheet.xlsx");
+		 inputStream = new FileInputStream(System.getProperty("user.dir")+"\\Resources\\InputData\\InputSheet.xlsx");
 		workbook = new XSSFWorkbook(inputStream);
 		 SheetName= workbook.getSheet("SearchYugandharRoyal");
 		SheetName2= workbook.getSheet("SearchCheGuevara");
@@ -114,7 +116,13 @@ public class BaseTest {
         //Setting up Path for Test Results Screenshots
         this.TestResultsScreenshotsPath = System.getProperty("user.dir")+"/Test Results/Test Results_ "+execution_start_time+"/Screenshots/";
         File file3 = new File(TestResultsScreenshotsPath);
-        if (!file3.exists()) {
+        if (!file3.exists()) {WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://www.geeksforgeeks.org/");
+        Thread.sleep(5000);
+        String text = driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div[1]/div[1]/div[1]")).getText();
+        System.out.println(text);
+        driver.quit();
         	try{
         	file3.mkdirs();
         	System.out.println("Path for Screenshots Test Results : "+TestResultsScreenshotsPath);}
