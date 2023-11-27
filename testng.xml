@@ -12,7 +12,6 @@
 		
 		<classes>
 		<!-- class name="Test.TestCasesController" -->
-			<class name="Test.TestCasesController" />
 			<class name="Test.TestCasesController2" />
 		</classes>
 
