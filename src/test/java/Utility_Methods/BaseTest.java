@@ -120,13 +120,17 @@ public class BaseTest {
         File file3 = new File(TestResultsScreenshotsPath);
         if (!file3.exists()) {WebDriverManager.chromedriver().setup();
        // driver = new ChromeDriver();
-	WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://www.geeksforgeeks.org/");
+        
+    	System.out.println("Launching driver");
+	WebDriver driver1 = new ChromeDriver();
+        driver1.manage().window().maximize();
+        driver1.get("https://www.geeksforgeeks.org/");
+        System.out.println("Launching url");
         Thread.sleep(5000);
         String text = driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div[1]/div[1]/div[1]")).getText();
         System.out.println(text);
-        driver.quit();
+        driver1.quit();
+        
         	try{
         	file3.mkdirs();
         	System.out.println("Path for Screenshots Test Results : "+TestResultsScreenshotsPath);}
