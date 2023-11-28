@@ -130,6 +130,7 @@ public class BaseTest {
         Thread.sleep(5000);
 		  System.out.println("searching for xpath");
         String text = driver1.findElement(By.xpath("//*[text()='Hello, What Do You Want To Learn?']")).getText();
+		System.out.println(text);
 		 System.out.println("searching for xpath2");
 		String text1 = driver.findElement(By.xpath("//*[text()='Hello, What Do You Want To Learn?']")).getText();
 	
