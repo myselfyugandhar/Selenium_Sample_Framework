@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -39,6 +40,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.openqa.selenium.support.PageFactory;
 public class BaseTest {
 	public WebDriver driver;
+	static RemoteWebDriver driver1;
 	protected CSVFileWriter CSVWriterNew;
 	Object[][] objCSVWebDriver = null;
 	InitialSetup objSetup = new InitialSetup();
@@ -118,11 +120,10 @@ public class BaseTest {
         //Setting up Path for Test Results Screenshots
         this.TestResultsScreenshotsPath = System.getProperty("user.dir")+"/Test Results/Test Results_ "+execution_start_time+"/Screenshots/";
         File file3 = new File(TestResultsScreenshotsPath);
-        if (!file3.exists()) {WebDriverManager.chromedriver().setup();
-       // driver = new ChromeDriver();
-        
-    	System.out.println("Launching driver");
-	WebDriver driver1 = new ChromeDriver();
+        if (!file3.exists()) {
+        	System.out.println("Launching driver"); 	
+   WebDriverManager.chromedriver().setup();
+   driver1 = new ChromeDriver();
         driver1.manage().window().maximize();
         driver1.get("https://www.geeksforgeeks.org/");
         System.out.println("Launching url");
