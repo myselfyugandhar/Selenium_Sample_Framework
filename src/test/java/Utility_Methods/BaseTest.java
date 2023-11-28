@@ -128,7 +128,9 @@ public class BaseTest {
         driver1.get("https://www.geeksforgeeks.org/");
         System.out.println("Launching url");
         Thread.sleep(5000);
-        String text = driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div[1]/div[1]/div[1]")).getText();
+		  System.out.println("searching for xpath");
+        String text = driver.findElement(By.xpath("//*[text()='Hello, What Do You Want To Learn?']")).getText();
+		 System.out.println("searching for xpath2");
         System.out.println(text);
         driver1.quit();
         
