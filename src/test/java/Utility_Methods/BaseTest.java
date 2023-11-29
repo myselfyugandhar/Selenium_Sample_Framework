@@ -158,6 +158,7 @@ public class BaseTest {
 		}
 		 WebDriverManager.chromedriver().setup();
 		   driver = new ChromeDriver();
+		   driver.get(URL);
 		CSVWriterNew = (CSVFileWriter) objCSVWebDriver[0][1];
 		System.out.println("Before class has been executed successfully for "+callerClassName+" class");
 	}	
