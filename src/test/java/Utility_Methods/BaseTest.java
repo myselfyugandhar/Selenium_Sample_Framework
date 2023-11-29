@@ -39,8 +39,9 @@ import java.util.concurrent.TimeUnit;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.openqa.selenium.support.PageFactory;
 public class BaseTest {
-	public WebDriver driver;
+	public WebDriver driver2;
 	static RemoteWebDriver driver1;
+	protected static RemoteWebDriver driver;
 	protected CSVFileWriter CSVWriterNew;
 	Object[][] objCSVWebDriver = null;
 	InitialSetup objSetup = new InitialSetup();
@@ -128,12 +129,7 @@ public class BaseTest {
         driver1.get("https://www.geeksforgeeks.org/");
         System.out.println("Launching url");
         Thread.sleep(5000);
-		  System.out.println("searching for xpath");
-        String text = driver1.findElement(By.xpath("//*[text()='Hello, What Do You Want To Learn?']")).getText();
-		System.out.println(text);
-		 System.out.println("searching for xpath2");
-		String text1 = driver.findElement(By.xpath("//*[text()='Hello, What Do You Want To Learn?']")).getText();
-	
+        String text = driver1.findElement(By.xpath("/html/body/div[2]/div/div/div/div[1]/div[1]/div[1]")).getText();
         System.out.println(text);
         driver1.quit();
         
@@ -160,7 +156,8 @@ public class BaseTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		driver = (WebDriver) objCSVWebDriver[0][0];
+		 WebDriverManager.chromedriver().setup();
+		   driver = new ChromeDriver();
 		CSVWriterNew = (CSVFileWriter) objCSVWebDriver[0][1];
 		System.out.println("Before class has been executed successfully for "+callerClassName+" class");
 	}	
