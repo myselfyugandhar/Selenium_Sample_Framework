@@ -1,2 +1,0 @@
-Release Month,Application Version,Region,Environment,Application Name,URL,Type Of Testing,Step No,Test Script,TestStep Description,Test Step,Expected Result,Actual Result,Execution Time,Status
-NA,NA,NA,QA,NA,https://www.google.co.in/,NA,1,Quit Browser,Validate Quit Browser,Exit browser,chrome browser should quit,chrome browser has quit,11-26-2023 at 17:20:21 IST,Fail

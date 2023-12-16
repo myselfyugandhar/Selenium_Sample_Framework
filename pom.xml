@@ -13,10 +13,18 @@
     <pluginManagement>
       <plugins>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.2.2</version>
-        </plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M7</version>
+        <configuration>
+		<forkCount>3</forkCount>
+		<reuseForks>true</reuseForks>
+		<argline>-Xmx1024m -XX:MaxPermSize=256m</argline>	
+          <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
       </plugins>
     </pluginManagement>
   </build>
@@ -48,7 +56,13 @@
     <artifactId>log4j-api</artifactId>
     <version>2.22.0</version>
 </dependency>
-	
+	<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>5.6.1</version>
+</dependency>
+
 	<!-- https://mvnrepository.com/artifact/jaxen/jaxen -->
 <dependency>
     <groupId>jaxen</groupId>
@@ -72,12 +86,6 @@
     <groupId>com.assertthat</groupId>
     <artifactId>selenium-shutterbug</artifactId>
     <version>1.6</version>
-</dependency>
-	<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
-<dependency>
-    <groupId>io.github.bonigarcia</groupId>
-    <artifactId>webdrivermanager</artifactId>
-    <version>5.6.1</version>
 </dependency>
 	
 <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
@@ -103,7 +111,7 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>7.7.1</version>
+			<version>6.14.3</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -152,8 +160,8 @@
 			<version>3.141.59</version>
 
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.google.api-client/google-api-client -->
-<dependency>
+		
+		<dependency>
     <groupId>com.google.api-client</groupId>
     <artifactId>google-api-client</artifactId>
     <version>2.0.0</version>
@@ -171,7 +179,6 @@
     <artifactId>google-api-services-sheets</artifactId>
     <version>v4-rev20220927-2.0.0</version>
 </dependency>
-		
 
 	</dependencies>
 </project>
