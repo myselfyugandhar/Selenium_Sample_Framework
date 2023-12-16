@@ -1,8 +1,12 @@
 package Utility_Methods;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -11,6 +15,7 @@ import Utility_Methods.InitialSetup;
 import Utility_Methods.ListOfInstancesDataProviderClass;
 import Utility_Methods.Utilitymethods;
 import Utility_Methods.WordDocument;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -34,7 +39,9 @@ import java.util.concurrent.TimeUnit;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.openqa.selenium.support.PageFactory;
 public class BaseTest {
-	public WebDriver driver;
+	public WebDriver driver2;
+	static RemoteWebDriver driver1;
+	protected static RemoteWebDriver driver;
 	protected CSVFileWriter CSVWriterNew;
 	Object[][] objCSVWebDriver = null;
 	InitialSetup objSetup = new InitialSetup();
@@ -77,10 +84,10 @@ public class BaseTest {
 		
 	}
 	
-	@Parameters("Browser")
+	//@Parameters("Browser")
 	@BeforeClass
-		public void launchUrl(String Browser ) throws InterruptedException, IOException {
-		 inputStream = new FileInputStream(System.getProperty("user.dir")+"\\Resources\\InputData\\InputSheet.xlsx");
+		public void launchUrl( ) throws InterruptedException, IOException {String Browser="Chrome";
+		 inputStream = new FileInputStream(System.getProperty("user.dir")+"/Resources/InputData/InputSheet.xlsx");
 		workbook = new XSSFWorkbook(inputStream);
 		 SheetName= workbook.getSheet("SearchYugandharRoyal");
 		SheetName2= workbook.getSheet("SearchCheGuevara");
@@ -115,6 +122,17 @@ public class BaseTest {
         this.TestResultsScreenshotsPath = System.getProperty("user.dir")+"/Test Results/Test Results_ "+execution_start_time+"/Screenshots/";
         File file3 = new File(TestResultsScreenshotsPath);
         if (!file3.exists()) {
+        	System.out.println("Launching driver"); 	
+   WebDriverManager.chromedriver().setup();
+   driver1 = new ChromeDriver();
+        driver1.manage().window().maximize();
+        driver1.get("https://www.geeksforgeeks.org/");
+        System.out.println("Launching url");
+        Thread.sleep(5000);
+        String text = driver1.findElement(By.xpath("/html/body/div[2]/div/div/div/div[1]/div[1]/div[1]")).getText();
+        System.out.println(text);
+        driver1.quit();
+        
         	try{
         	file3.mkdirs();
         	System.out.println("Path for Screenshots Test Results : "+TestResultsScreenshotsPath);}
@@ -138,7 +156,9 @@ public class BaseTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		driver = (WebDriver) objCSVWebDriver[0][0];
+		 WebDriverManager.chromedriver().setup();
+		   driver = new ChromeDriver();
+		   driver.get(URL);
 		CSVWriterNew = (CSVFileWriter) objCSVWebDriver[0][1];
 		System.out.println("Before class has been executed successfully for "+callerClassName+" class");
 	}	
@@ -160,10 +180,10 @@ public class BaseTest {
 		}
 	
 
-	@Parameters("Browser")	
+	
 	@AfterClass(alwaysRun = true)
 
-	public void closeBrowser(String Browser) {			
+	public void closeBrowser() {	String Browser="Chrome";		
 		try {			
 			objSetup.tearDown(outputCsvFileName,driver, CSVWriterNew, ApplicationName, Region, Env, ReleaseMonth, DashboardName,Browser,execution_start_time,ReportPath);
 
@@ -173,8 +193,3 @@ public class BaseTest {
 }
 	}
 }
-
-
-
-
-

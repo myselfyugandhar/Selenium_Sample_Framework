@@ -9,7 +9,7 @@
     <classes>
       <class name="Test.TestCasesController2">
         <methods>
-          <include name="CheGuevara_Search" invocation-numbers="0"/>
+          <include name="CheGuevara_Search"/>
           <include name="closeBrowser"/>
           <include name="ExecutionTimeForTest"/>
           <include name="launchUrl"/>

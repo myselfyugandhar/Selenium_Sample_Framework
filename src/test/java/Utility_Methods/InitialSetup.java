@@ -25,9 +25,11 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Factory;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class InitialSetup{
 
-	 protected static   ThreadLocal<ChromeDriver> driver = new ThreadLocal<>();
+	 protected static   ThreadLocal<ChromeDriver> driver4 = new ThreadLocal<>();
 	
 	public Object[][] setupNew(String VersionNumber, String ApplicationName, String Region, String Env,
 			String URL, String ReleaseMonth,String Type_of_Testing, String Browser) throws MalformedURLException, InterruptedException{
@@ -60,9 +62,10 @@ public class InitialSetup{
 //						System.setProperty("webdriver.chrome.driver",
 //								System.getProperty("user.dir") + "/Resources/Drivers/LINUX/chromedriver");
 					}
-							driver.set(new ChromeDriver());
-					driver.get().get(URL);
-					driver.get().manage().window().maximize();
+//					 WebDriverManager.chromedriver().setup();
+//					   driver = new ChromeDriver();
+//					driver.get().get(URL);
+//					driver.get().manage().window().maximize();
 
 				}
 			} catch (Exception e) {
@@ -73,14 +76,14 @@ public class InitialSetup{
 	
 			
 		
-    	objCSVWebDriver[0][0]=driver.get();
+    	//objCSVWebDriver[0][0]=driver.get();
     	objCSVWebDriver[0][1]=CSVFileWriterNew;
 		return objCSVWebDriver;
 	}
 public String screenshotName;
 public  void captureFailedScreenshot(String screenshotName) {	this.screenshotName=screenshotName;
 	  BaseTest. ExtentReportPath = System.getProperty("user.dir")+"/Test Results/Test Results_ "+BaseTest.execution_start_time+"/Extent Report & Failed Tests Screenshots/";
-		File scrFile = ((TakesScreenshot)driver.get()).getScreenshotAs(OutputType.FILE);
+		File scrFile = ((TakesScreenshot)driver4.get()).getScreenshotAs(OutputType.FILE);
 		Date d = new Date();
 		//screenshotName = d.toString().replace(":", "_").replace(" ", "_") + ".jpg";
 

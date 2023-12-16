@@ -3,46 +3,52 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>Selenium_Sample_Framework</groupId>
-
 	<artifactId>Selenium_Sample_Framework</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<build>
-	<plugins>
-		<plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-failsafe-plugin</artifactId>
-                    <version>2.21.0</version>
-                    <executions>
-                        <execution>
-                            <id>integration-tests</id>
-                            <goals>
-                                <goal>integration-test</goal>
-                                <goal>verify</goal>
-                            </goals>
-                            <configuration>
-                                <encoding>UTF-8</encoding>
-                                <!-- Includes integration tests -->
-                                <includes>
-                                    <include>**/integration/*.java</include>
-                                    <include>**/integration/*/*.java</include>
-                                </includes>
-                                <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-	<plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-surefire-plugin</artifactId>
-  <version>2.22.0</version>
-</plugin>
-</plugins>
-</build>
 	<properties>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
 	</properties>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.2.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
 	<dependencies>
+	
+	
+	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>2.0.8</version>
+</dependency>
+	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-simple</artifactId>
+    <version>2.0.8</version>
+    <scope>test</scope>
+</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-core</artifactId>
+    <version>2.22.0</version>
+</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-api</artifactId>
+    <version>2.22.0</version>
+</dependency>
+	
 	<!-- https://mvnrepository.com/artifact/jaxen/jaxen -->
 <dependency>
     <groupId>jaxen</groupId>
@@ -66,6 +72,12 @@
     <groupId>com.assertthat</groupId>
     <artifactId>selenium-shutterbug</artifactId>
     <version>1.6</version>
+</dependency>
+	<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>5.6.1</version>
 </dependency>
 	
 <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
@@ -140,6 +152,25 @@
 			<version>3.141.59</version>
 
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.api-client/google-api-client -->
+<dependency>
+    <groupId>com.google.api-client</groupId>
+    <artifactId>google-api-client</artifactId>
+    <version>2.1.4</version>
+</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.oauth-client/google-oauth-client-jetty -->
+<dependency>
+    <groupId>com.google.oauth-client</groupId>
+    <artifactId>google-oauth-client-jetty</artifactId>
+    <version>1.34.0</version>
+</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.apis/google-api-services-sheets -->
+<dependency>
+    <groupId>com.google.apis</groupId>
+    <artifactId>google-api-services-sheets</artifactId>
+    <version>v4-rev612-1.25.0</version>
+</dependency>
+		
 
 	</dependencies>
 </project>
