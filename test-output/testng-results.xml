@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-16T16:51:24 IST" name="Default suite" finished-at="2023-12-16T16:51:56 IST" duration-ms="31428">
+  <suite started-at="2023-12-16T17:01:23 IST" name="Default suite" finished-at="2023-12-16T17:01:36 IST" duration-ms="12356">
     <groups>
     </groups>
-    <test started-at="2023-12-16T16:51:24 IST" name="Default test" finished-at="2023-12-16T16:51:56 IST" duration-ms="31428">
+    <test started-at="2023-12-16T17:01:23 IST" name="Default test" finished-at="2023-12-16T17:01:36 IST" duration-ms="12356">
       <class name="Test.TestCasesController2">
-        <test-method is-config="true" signature="launchUrl()[pri:0, instance:Test.TestCasesController2@1a35993f, instance params:[NA, NA, NA, QA, https://www.google.co.in/, newadmin, password02, NA, null]]" started-at="2023-12-16T16:51:24 IST" name="launchUrl" finished-at="2023-12-16T16:51:50 IST" duration-ms="25596" status="PASS">
+        <test-method is-config="true" signature="launchUrl()[pri:0, instance:Test.TestCasesController2@1a35993f, instance params:[NA, NA, NA, QA, https://www.google.co.in/, newadmin, password02, NA, null]]" started-at="2023-12-16T17:01:23 IST" name="launchUrl" finished-at="2023-12-16T17:01:33 IST" duration-ms="9176" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchUrl -->
-        <test-method signature="CheGuevara_Search()[pri:10, instance:Test.TestCasesController2@1a35993f, instance params:[NA, NA, NA, QA, https://www.google.co.in/, newadmin, password02, NA, null]]" started-at="2023-12-16T16:51:50 IST" name="CheGuevara_Search" finished-at="2023-12-16T16:51:54 IST" duration-ms="3908" status="PASS">
+        <test-method signature="CheGuevara_Search()[pri:10, instance:Test.TestCasesController2@1a35993f, instance params:[NA, NA, NA, QA, https://www.google.co.in/, newadmin, password02, NA, null]]" started-at="2023-12-16T17:01:33 IST" name="CheGuevara_Search" finished-at="2023-12-16T17:01:35 IST" duration-ms="2500" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheGuevara_Search -->
-        <test-method is-config="true" signature="ExecutionTimeForTest(org.testng.ITestResult)[pri:0, instance:Test.TestCasesController2@1a35993f, instance params:[NA, NA, NA, QA, https://www.google.co.in/, newadmin, password02, NA, null]]" started-at="2023-12-16T16:51:54 IST" name="ExecutionTimeForTest" finished-at="2023-12-16T16:51:55 IST" duration-ms="544" status="PASS">
+        <test-method is-config="true" signature="ExecutionTimeForTest(org.testng.ITestResult)[pri:0, instance:Test.TestCasesController2@1a35993f, instance params:[NA, NA, NA, QA, https://www.google.co.in/, newadmin, password02, NA, null]]" started-at="2023-12-16T17:01:35 IST" name="ExecutionTimeForTest" finished-at="2023-12-16T17:01:35 IST" duration-ms="282" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -26,7 +26,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ExecutionTimeForTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Test.TestCasesController2@1a35993f, instance params:[NA, NA, NA, QA, https://www.google.co.in/, newadmin, password02, NA, null]]" started-at="2023-12-16T16:51:55 IST" name="closeBrowser" finished-at="2023-12-16T16:51:56 IST" duration-ms="1009" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Test.TestCasesController2@1a35993f, instance params:[NA, NA, NA, QA, https://www.google.co.in/, newadmin, password02, NA, null]]" started-at="2023-12-16T17:01:35 IST" name="closeBrowser" finished-at="2023-12-16T17:01:36 IST" duration-ms="327" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
