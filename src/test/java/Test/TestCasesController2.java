@@ -46,6 +46,7 @@ public class TestCasesController2 extends BaseTest {
 		this.outputCsvFileName="Che Guevara_Search_Result";	
 	this.doc=WordDocument.CreatingWordDocument("Che Guevara_Search_Result");
 			GoogleSearch2 obj =new GoogleSearch2(driver,CSVWriterNew,doc);
+			SheetsQuickstart.main1();
 			//obj.GoogleSearch(SheetName2,execution_start_time,TestResultsDocPath,TestResultsScreenshotsPath);
 
 	}
